@@ -3,6 +3,7 @@
 
 body {
     font-family:@fontFamily;
+    font-weight: lighter;
 }
 
 header {
@@ -21,57 +22,49 @@ header {
     font-weight: bold;
     font-size: 30px;
     letter-spacing: 3px;
-    @media screen {
-        @media (min-width:790px) {
-            position: fixed;
-            top: 0;
-            margin-top: 16px;
-        }
-    }
+
 }
+
 
 nav {
     position: fixed;
     width: 100%;
     line-height: 60px;
-    ul {
+    .menu-icon {
         line-height: 60px;
-        list-style: none;
-        background: rgba(0, 0, 0, 0);
-        overflow: hidden;
-        color: #fff;
-        padding: 0;
+        width: 100%;
+        background: #000;
         text-align: right;
-        margin: 0;
-        padding-right: 40px;
-        transition: 1s;
-        @media screen {
-            @media (min-width:790px) {
-                max-height: 0px;
-                background: #000;
-            }
-        }
-        li{
-            display: inline-block;
-            padding: 16px 40px;
-            @media screen {
-                @media (min-width:790px) {
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding: 24px;
-                    text-align: center;
+        box-sizing: border-box;
+        padding: 15px 24px;
+        cursor: pointer;
+        color: #fff;
+        display: none;
+    }
+    .menu{
+        ul {
+            line-height: 60px;
+            list-style: none;
+            background: rgba(0, 0, 0, 0);
+            overflow: hidden;
+            color: #fff;
+            padding: 0;
+            text-align: right;
+            margin: 0;
+            padding-right: 40px;
+            transition: 1s;
+            li{
+                display: inline-block;
+                padding: 16px 40px;
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 26px;
                 }
-            }
-            a {
-                text-decoration: none;
-                color: #fff;
-                font-size: 26px;
             }
         }
     }
 }
-
-
 
 
 nav.black ul {
@@ -79,4 +72,34 @@ nav.black ul {
 }
 .showing {
     max-height: 34em;
+}
+
+
+@media screen and (min-width:790px) {
+    .logo {
+        position: fixed;
+        top: 0;
+        margin-top: 16px;
+    }
+    nav {
+        .menu-icon {
+            display: block;
+        }
+        .menu{
+            ul{
+                max-height: 0px;
+                background: #000;
+                li{
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding: 24px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .showing {
+        max-height: 34em;
+    }
+    
 }
